@@ -1,42 +1,21 @@
-import React from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Projects from "@/components/Projects";
-import About from "@/components/About";
-import Blogs from "@/components/Blogs";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import { Hero } from "@/components/sections/hero";
+import { SocialProof } from "@/components/sections/social-proof";
+import { ServicesOverview } from "@/components/sections/services-overview";
+import { Metrics } from "@/components/sections/metrics";
+import { FeaturedWork } from "@/components/sections/featured-work";
+import { Testimonials } from "@/components/sections/testimonials";
+import { CtaSection } from "@/components/sections/cta";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
-      {/* Sticky Header Navbar */}
-      <Navbar />
-
-      {/* Main Page Layout */}
-      <main className="flex flex-col flex-1">
-        {/* Hero Banner Section */}
-        <Hero />
-
-        {/* Services List Grid */}
-        <Services />
-
-        {/* Portfolio Filter Grid */}
-        <Projects />
-
-        {/* About details & stats */}
-        <About />
-
-        {/* Blog listings */}
-        <Blogs />
-
-        {/* Call to action Contact Form */}
-        <Contact />
-      </main>
-
-      {/* Footer Branding & Links */}
-      <Footer />
+      <Hero />
+      <SocialProof />
+      <ServicesOverview />
+      <Metrics />
+      <FeaturedWork />
+      <Testimonials />
+      <CtaSection />
     </>
   );
 }

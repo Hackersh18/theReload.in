@@ -23,12 +23,12 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Engineering notes on architecture, SaaS, and shipping production software — from the SoftSole team.",
+    "Engineering notes on architecture, SaaS, and shipping production software — from the Reload team.",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: `Insights · ${siteConfig.name}`,
     description:
-      "Engineering notes on architecture, SaaS, and shipping production software — from the SoftSole team.",
+      "Engineering notes on architecture, SaaS, and shipping production software — from the Reload team.",
     type: "website",
   },
 };

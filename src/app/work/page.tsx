@@ -8,7 +8,7 @@ import { CtaSection } from "@/components/sections/cta";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected projects from SoftSole — SaaS platforms, web apps, and internal tools with measurable engineering outcomes.",
+    "Selected projects from Reload — SaaS platforms, web apps, and internal tools with measurable engineering outcomes.",
   alternates: { canonical: "/work" },
 };
 

@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "SoftSole scoped our MVP ruthlessly, built the billing and auth plumbing right, and got us to revenue in ten weeks. Exactly what a pre-seed team needs.",
+      "Reload scoped our MVP ruthlessly, built the billing and auth plumbing right, and got us to revenue in ten weeks. Exactly what a pre-seed team needs.",
     name: "Marcus Lee",
     role: "Founder & CEO",
     company: "Cobalt",

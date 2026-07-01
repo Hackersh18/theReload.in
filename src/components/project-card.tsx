@@ -86,7 +86,7 @@ export function ProjectCard({
     <Link
       href={`/work/${project.slug}`}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-bento)] border border-border bg-surface transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_28px_64px_-24px_rgba(0,0,0,0.28)]",
+        "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-bento)] border border-border bg-surface hover-3d-lift hover:border-accent/35",
         className,
       )}
     >

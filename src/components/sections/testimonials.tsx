@@ -21,7 +21,7 @@ export function Testimonials() {
       <BentoGrid className="mt-10">
         {testimonials.map((t, i) => (
           <Reveal key={t.name} delay={i * 90}>
-            <BentoCard variant="dark" className="h-full justify-between gap-6">
+            <BentoCard variant="dark" interactive className="h-full justify-between gap-6">
               <Icon name="quote" size={28} className="text-accent" />
               <p className="text-lg font-semibold leading-relaxed text-white sm:text-xl">
                 &ldquo;{t.quote}&rdquo;

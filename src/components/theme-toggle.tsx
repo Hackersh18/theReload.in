@@ -28,7 +28,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       }
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-all duration-300 hover:scale-105",
+        "glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--nav-link-active)] transition-all duration-300 hover:scale-105",
         className,
       )}
     >

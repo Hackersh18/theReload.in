@@ -12,7 +12,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project with SoftSole. Send a message, see our FAQs, or book a discovery call to discuss your web app or SaaS build.",
+    "Start a project with Reload. Send a message, see our FAQs, or book a discovery call to discuss your web app or SaaS build.",
   alternates: { canonical: "/contact" },
 };
 

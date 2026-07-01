@@ -11,7 +11,7 @@ import { services, processSteps } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Full-stack web development, SaaS builds, and technical consulting — SoftSole helps teams ship production-ready software.",
+    "Full-stack web development, SaaS builds, and technical consulting — Reload helps teams ship production-ready software.",
   alternates: { canonical: "/services" },
 };
 
@@ -46,7 +46,6 @@ export default function ServicesPage() {
             <Reveal key={service.slug} delay={(i % 3) * 90}>
               <ServiceCard
                 service={service}
-                index={i}
                 variant="full"
                 className="h-full"
               />

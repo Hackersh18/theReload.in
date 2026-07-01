@@ -137,7 +137,7 @@ export function BentoCard({
         "relative flex flex-col overflow-hidden rounded-[var(--radius-bento)] border p-6",
         variants[variant],
         interactive &&
-          "group transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-[0_20px_56px_-18px_rgba(0,0,0,0.4)]",
+          "group hover-3d-lift hover:shadow-[0_24px_56px_-18px_rgba(0,0,0,0.42)]",
         className,
       )}
     >

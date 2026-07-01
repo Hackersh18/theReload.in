@@ -12,19 +12,15 @@ import { cn } from "@/lib/utils";
 
 function navItemClass(active: boolean) {
   return cn(
-    "rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300",
-    active
-      ? "glass-pill text-foreground"
-      : "glass-pill-hover text-muted hover:text-foreground",
+    "glass-nav-link rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300",
+    active ? "glass-pill is-active" : "hover:glass-pill-hover",
   );
 }
 
 function mobileItemClass(active: boolean) {
   return cn(
-    "rounded-2xl px-4 py-3 text-base font-medium transition-all duration-300",
-    active
-      ? "glass-pill text-foreground"
-      : "glass-pill-hover text-muted hover:text-foreground",
+    "glass-nav-link rounded-2xl px-4 py-3 text-base font-medium transition-all duration-300",
+    active ? "glass-pill is-active" : "hover:glass-pill-hover",
   );
 }
 
@@ -48,14 +44,15 @@ export function Navbar() {
   }, [open]);
 
   const isActive = (href: string) => pathname.startsWith(href);
-  const howItWorksActive = pathname === "/" || pathname === "/services";
+  const howItWorksActive = pathname === "/";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-5 sm:pt-3.5">
       <div
         className={cn(
           "glass-nav animate-header-in mx-auto max-w-5xl rounded-[1.125rem] transition-shadow duration-500 sm:rounded-full",
-          scrolled && "shadow-[0_8px_32px_-8px_rgba(0,0,0,0.2)]",
+          scrolled &&
+            "depth-elevated shadow-[0_12px_40px_-12px_rgba(0,0,0,0.22)]",
         )}
       >
         <nav className="grid h-12 grid-cols-[1fr_auto_1fr] items-center px-2 sm:h-[3.25rem] sm:px-3">
@@ -77,7 +74,7 @@ export function Navbar() {
 
           {/* Center logo */}
           <div className="flex justify-start md:justify-center">
-            <Logo />
+            <Logo className="[&_span]:text-[var(--nav-link-active)]" />
           </div>
 
           {/* Right actions */}
@@ -100,7 +97,7 @@ export function Navbar() {
               aria-label="Open menu"
               aria-expanded={open}
               onClick={() => setOpen(true)}
-              className="glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-transform hover:scale-105 md:hidden"
+              className="glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--nav-link-active)] transition-transform hover:scale-105 md:hidden"
             >
               <Icon name="menu" size={18} />
             </button>
@@ -135,7 +132,7 @@ export function Navbar() {
               type="button"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
-              className="glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground"
+              className="glass-icon-btn inline-flex h-9 w-9 items-center justify-center rounded-full text-[var(--nav-link-active)]"
             >
               <Icon name="close" size={18} />
             </button>

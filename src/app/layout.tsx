@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LoadingIntro } from "@/components/loading-intro";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <LoadingIntro />
           <Navbar />
           <main>{children}</main>
           <Footer />

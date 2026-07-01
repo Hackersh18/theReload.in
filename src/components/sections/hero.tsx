@@ -15,6 +15,17 @@ export function Hero() {
       {/* Background layers */}
       <div className="hero-mesh pointer-events-none absolute inset-0 -z-10" />
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.22] animate-hero-glow" />
+      <div className="hero-3d-plane pointer-events-none absolute inset-x-0 -z-10 hidden sm:block" />
+      <div
+        className="hero-3d-cube pointer-events-none absolute -z-10 hidden h-16 w-16 lg:block"
+        style={{ left: "8%", top: "22%", animationDelay: "0s" }}
+        aria-hidden
+      />
+      <div
+        className="hero-3d-cube pointer-events-none absolute -z-10 hidden h-12 w-12 opacity-70 lg:block"
+        style={{ right: "12%", top: "30%", animationDelay: "-4s" }}
+        aria-hidden
+      />
       <div className="pointer-events-none absolute -left-32 top-20 -z-10 h-72 w-72 rounded-full bg-accent/20 blur-[100px]" />
       <div className="pointer-events-none absolute -right-24 bottom-10 -z-10 h-64 w-64 rounded-full bg-purple/10 blur-[90px]" />
 
@@ -50,7 +61,7 @@ export function Hero() {
 
             <Reveal immediate delay={160}>
               <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
-                {siteConfig.tagline} SoftSole designs, engineers, and ships web apps,
+                {siteConfig.tagline} {siteConfig.name} designs, engineers, and ships web apps,
                 SaaS products, and internal tools — from MVP to scale.
               </p>
             </Reveal>
@@ -87,7 +98,7 @@ export function Hero() {
 
         {/* Bottom stats strip */}
         <Reveal delay={400}>
-          <div className="glass-section mt-14 grid grid-cols-3 gap-4 rounded-[var(--radius-bento)] p-5 sm:gap-6 sm:p-6 lg:mt-16">
+          <div className="glass-section depth-elevated mt-14 grid grid-cols-3 gap-4 rounded-[var(--radius-bento)] p-5 sm:gap-6 sm:p-6 lg:mt-16">
             {heroMetrics.map((m) => (
               <div key={m.label} className="text-center lg:text-left">
                 <p className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">

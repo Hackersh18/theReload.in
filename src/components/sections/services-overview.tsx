@@ -25,7 +25,6 @@ export function ServicesOverview() {
         <div className="absolute left-1/2 top-0 h-px w-[min(920px,92%)] -translate-x-1/2 bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
         <div className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-accent/10 blur-[110px]" />
         <div className="absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-purple/10 blur-[100px]" />
-        <div className="bg-grid absolute inset-0 opacity-[0.06]" />
       </div>
 
       <div className="relative">
@@ -48,7 +47,7 @@ export function ServicesOverview() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
+                  className="hover-3d-lift min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
                 >
                   <p className="text-2xl font-extrabold tracking-tight text-accent">
                     {stat.value}
@@ -62,21 +61,17 @@ export function ServicesOverview() {
           </Reveal>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-[var(--radius-section)] border border-white/10 bg-white/[0.04] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-5">
-          <div className="grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
             {preview.map((service, i) => (
               <Reveal key={service.slug} delay={i * 100} className="min-h-0">
                 <ServiceCard
                   service={service}
-                  index={i}
-                  highlight={service.slug === "saas-product-development"}
                   variant="compact"
                   className="h-full"
                 />
               </Reveal>
             ))}
           </div>
-        </div>
 
         <Reveal delay={280}>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

@@ -129,29 +129,3 @@ export function Eyebrow({
     </span>
   );
 }
-
-/** Circular arrow button used on service cards. */
-export function CircleArrow({
-  className,
-  variant = "dark",
-}: {
-  className?: string;
-  variant?: "dark" | "lime" | "purple";
-}) {
-  const styles = {
-    dark: "bg-foreground text-background",
-    lime: "bg-accent text-accent-foreground",
-    purple: "bg-purple text-purple-foreground",
-  };
-  return (
-    <span
-      className={cn(
-        "inline-flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45",
-        styles[variant],
-        className,
-      )}
-    >
-      <Icon name="arrowUpRight" size={18} />
-    </span>
-  );
-}

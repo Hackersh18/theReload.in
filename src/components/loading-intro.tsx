@@ -27,152 +27,134 @@ function shouldSkipIntro() {
 }
 
 function OldWebsiteMock() {
-  const services = [
-    {
-      title: "Web Design",
-      desc: "Responsive layouts built with the latest frameworks.",
-      icon: (
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-          <rect x="3" y="4" width="18" height="14" rx="2" />
-          <path d="M3 9h18" />
-        </svg>
-      ),
-    },
-    {
-      title: "Digital Marketing",
-      desc: "SEO, social media, and paid campaigns that convert.",
-      icon: (
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-          <path d="M4 18V6l8 6 8-6v12" />
-        </svg>
-      ),
-    },
-    {
-      title: "Brand Strategy",
-      desc: "Logos, guidelines, and messaging for your business.",
-      icon: (
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-          <circle cx="12" cy="12" r="8" />
-          <path d="M12 8v4l3 2" />
-        </svg>
-      ),
-    },
-  ];
+  const links = ["Home", "About Me", "My Services", "Cool Links", "Guestbook", "Email Me"];
 
   return (
-    <div className="intro-old-site flex h-full flex-col overflow-hidden bg-[#f8fafc] font-sans text-[#334155]">
-      <header className="flex shrink-0 items-center justify-between border-b border-[#e2e8f0] bg-white px-5 py-4 sm:px-8">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#3b82f6] text-sm font-bold text-white">
-            S
-          </div>
-          <span className="text-lg font-semibold tracking-tight text-[#0f172a]">
-            Studio North
-          </span>
-        </div>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-[#64748b] md:flex">
-          {["Work", "Services", "About", "Blog"].map((item, i) => (
-            <span
-              key={item}
-              className={cn(i === 0 && "font-semibold text-[#3b82f6]")}
-            >
-              {item}
-            </span>
-          ))}
-        </nav>
-        <span className="rounded-lg bg-[#3b82f6] px-4 py-2 text-sm font-semibold text-white shadow-sm">
-          Get Started
-        </span>
+    <div className="intro-90s-site flex h-full flex-col overflow-hidden">
+      {/* Top banner */}
+      <div className="intro-90s-banner shrink-0">
+        <span className="intro-90s-blink">★ NEW ★</span> Welcome to Studio North on the World Wide Web!
+      </div>
+
+      {/* Title block */}
+      <header className="intro-90s-header shrink-0">
+        <h1 className="intro-90s-title">~* Studio North *~</h1>
+        <p className="intro-90s-subtitle">
+          Your #1 Source for Home Pages on the Information Superhighway
+        </p>
+        <p className="intro-90s-netscape">Best viewed with Netscape Navigator 3.0 · 800×600</p>
       </header>
 
-      <div className="shrink-0 border-b border-[#e2e8f0] bg-[#eff6ff] px-5 py-2.5 text-center text-xs text-[#3b82f6] sm:text-sm">
-        <span className="font-medium">New:</span> We now offer mobile app development —{" "}
-        <span className="underline">learn more</span>
-      </div>
+      <hr className="intro-90s-hr" />
 
-      <section className="shrink-0 bg-gradient-to-br from-[#1e40af] via-[#2563eb] to-[#3b82f6] px-5 py-10 text-white sm:px-8 sm:py-12 lg:py-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200 sm:text-sm">
-            Full-Service Agency
-          </p>
-          <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            We help businesses grow online
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-blue-100 sm:text-base">
-            Strategy, design, and development for companies that want a
-            professional web presence. Trusted by over 200 clients worldwide.
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <span className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#1e40af] shadow-md">
-              View Our Work
-            </span>
-            <span className="rounded-lg border border-white/40 px-5 py-2.5 text-sm font-semibold text-white">
-              Contact Us
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <div className="grid shrink-0 grid-cols-3 divide-x divide-[#e2e8f0] border-b border-[#e2e8f0] bg-white">
-        {[
-          { value: "200+", label: "Projects" },
-          { value: "15", label: "Team Members" },
-          { value: "8 yrs", label: "Experience" },
-        ].map((stat) => (
-          <div key={stat.label} className="px-4 py-5 text-center sm:py-6">
-            <p className="text-xl font-bold text-[#0f172a] sm:text-2xl">{stat.value}</p>
-            <p className="mt-0.5 text-xs text-[#94a3b8] sm:text-sm">{stat.label}</p>
-          </div>
+      {/* Nav row */}
+      <nav className="intro-90s-nav shrink-0">
+        {links.map((link) => (
+          <a key={link} href="#" onClick={(e) => e.preventDefault()} tabIndex={-1}>
+            {link}
+          </a>
         ))}
+      </nav>
+
+      <hr className="intro-90s-hr intro-90s-hr-rainbow" />
+
+      {/* Marquee */}
+      <div className="intro-90s-marquee shrink-0">
+        <div className="intro-marquee-track">
+          ★ Thanks for visiting! ★ Sign my guestbook! ★ Under construction but still awesome! ★
+          Thanks for visiting! ★ Sign my guestbook! ★
+        </div>
       </div>
 
-      <main className="min-h-0 flex-1 overflow-y-auto px-5 py-8 sm:px-8 sm:py-10">
-        <div className="mb-6 text-center sm:mb-8">
-          <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
-            What we do
-          </h2>
-          <p className="mt-2 text-sm text-[#64748b] sm:text-base">
-            End-to-end digital services for modern businesses
-          </p>
-        </div>
+      <main className="intro-90s-main min-h-0 flex-1 overflow-y-auto">
+        <div className="intro-90s-columns">
+          {/* Left sidebar */}
+          <aside className="intro-90s-sidebar">
+            <div className="intro-90s-box">
+              <p className="intro-90s-box-title">Site Menu</p>
+              <ul>
+                {links.slice(0, 4).map((link) => (
+                  <li key={link}>
+                    <a href="#" onClick={(e) => e.preventDefault()} tabIndex={-1}>
+                      → {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <div className="grid gap-4 sm:grid-cols-3 sm:gap-5">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-xl border border-[#e2e8f0] bg-white p-5 shadow-sm transition-shadow sm:p-6"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#eff6ff] text-[#3b82f6]">
-                {service.icon}
+            <div className="intro-90s-box intro-90s-construction">
+              <p className="intro-90s-box-title">Site Status</p>
+              <div className="intro-90s-under-construction" aria-hidden>
+                🚧
               </div>
-              <h3 className="mt-4 text-base font-semibold text-[#0f172a] sm:text-lg">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#64748b]">
-                {service.desc}
-              </p>
-              <p className="mt-4 text-sm font-semibold text-[#3b82f6]">
-                Learn more →
+              <p className="intro-90s-blink intro-90s-construction-text">UNDER CONSTRUCTION</p>
+            </div>
+
+            <div className="intro-90s-box">
+              <p className="intro-90s-box-title">You are visitor #</p>
+              <p className="intro-90s-counter">000,847</p>
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <div className="intro-90s-content">
+            <div className="intro-90s-welcome-box">
+              <h2>Welcome to My Homepage!!!</h2>
+              <p>
+                Hi!!! My name is <strong>Steve</strong> and this is the official Studio North
+                website. We make <span className="intro-90s-highlight">COOL WEB PAGES</span> for
+                local businesses. Check back often — I update this page whenever I learn a new HTML
+                tag!!!
               </p>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-8 rounded-xl bg-[#f1f5f9] p-6 text-center sm:mt-10 sm:p-8">
-          <h3 className="text-lg font-bold text-[#0f172a] sm:text-xl">
-            Ready to start your project?
-          </h3>
-          <p className="mt-2 text-sm text-[#64748b]">
-            Schedule a free consultation with our team today.
-          </p>
-          <span className="mt-4 inline-block rounded-lg bg-[#3b82f6] px-6 py-2.5 text-sm font-semibold text-white">
-            Book a Call
-          </span>
+            <h3 className="intro-90s-section-head">☆ Our Services ☆</h3>
+            <table className="intro-90s-table">
+              <tbody>
+                {[
+                  ["Web Pages", "Custom home pages with clipart and MIDI music"],
+                  ["Email Setup", "Get your own @studionorth.com address!!!"],
+                  ["Scanning", "We scan your photos for the internet"],
+                ].map(([title, desc]) => (
+                  <tr key={title}>
+                    <td className="intro-90s-table-label">{title}</td>
+                    <td>{desc}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <h3 className="intro-90s-section-head">☆ Cool Stuff ☆</h3>
+            <p>
+              <a href="#" onClick={(e) => e.preventDefault()} tabIndex={-1}>
+                Click here
+              </a>{" "}
+              to see our portfolio ·{" "}
+              <a href="#" onClick={(e) => e.preventDefault()} tabIndex={-1}>
+                Download our brochure (2.4 MB)
+              </a>
+            </p>
+
+            <div className="intro-90s-guestbook">
+              <p>✉️ Email me: info@studionorth.com</p>
+              <p>
+                <a href="#" onClick={(e) => e.preventDefault()} tabIndex={-1}>
+                  Sign My Guestbook!!!
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </main>
 
-      <footer className="shrink-0 border-t border-[#e2e8f0] bg-white px-5 py-4 text-center text-xs text-[#94a3b8] sm:text-sm">
-        © 2018 Studio North Agency · Privacy · Terms
+      <hr className="intro-90s-hr" />
+
+      <footer className="intro-90s-footer shrink-0">
+        <p>© 1996 Studio North · Last updated: March 14, 1997</p>
+        <p className="intro-90s-footer-small">
+          Made with Microsoft FrontPage · Not responsible for broken links
+        </p>
       </footer>
     </div>
   );
@@ -438,7 +420,7 @@ export function LoadingIntro() {
                   clicking={step === "clicking"}
                 />
                 <div className="ml-1 min-w-0 flex-1 truncate rounded bg-[#1e1e1e] px-3 py-1.5 text-xs text-white/50">
-                  http://studionorth.agency
+                  http://www.studionorth.com/index.htm
                 </div>
               </div>
             </div>

@@ -827,107 +827,6 @@
     }
   }
 
-  /* SaaS service card — distinctive motion */
-  @keyframes saas-bar-dance {
-    0%,
-    100% {
-      transform: scaleY(0.72);
-      opacity: 0.55;
-    }
-    50% {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes saas-orb-drift {
-    0%,
-    100% {
-      transform: translate(0, -50%) scale(1);
-      opacity: 0.45;
-    }
-    50% {
-      transform: translate(12px, -42%) scale(1.12);
-      opacity: 0.75;
-    }
-  }
-
-  @keyframes saas-orb-drift-alt {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0.35;
-    }
-    50% {
-      transform: translate(-10px, 8px) scale(1.15);
-      opacity: 0.6;
-    }
-  }
-
-  @keyframes saas-scan {
-    0% {
-      top: 0;
-      opacity: 0;
-    }
-    15% {
-      opacity: 1;
-    }
-    85% {
-      opacity: 1;
-    }
-    100% {
-      top: 100%;
-      opacity: 0;
-    }
-  }
-
-  @keyframes saas-pill-pop {
-    0%,
-    100% {
-      transform: translateY(0);
-      opacity: 0.65;
-    }
-    50% {
-      transform: translateY(-2px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes saas-glow-pulse {
-    0%,
-    100% {
-      box-shadow: 0 0 24px rgba(198, 255, 0, 0.06);
-    }
-    50% {
-      box-shadow: 0 0 48px rgba(198, 255, 0, 0.14);
-    }
-  }
-
-  .saas-bar {
-    animation: saas-bar-dance 2.4s ease-in-out infinite;
-    animation-delay: var(--saas-delay, 0s);
-  }
-
-  .saas-orb {
-    animation: saas-orb-drift 5s ease-in-out infinite;
-  }
-
-  .saas-orb-delayed {
-    animation: saas-orb-drift-alt 6s ease-in-out infinite;
-  }
-
-  .saas-scan {
-    animation: saas-scan 3.5s ease-in-out infinite;
-  }
-
-  .saas-pill {
-    animation: saas-pill-pop 2.8s ease-in-out infinite;
-  }
-
-  .saas-card-shell {
-    animation: saas-glow-pulse 3s ease-in-out infinite;
-  }
-
   /* Flowdesk project card — spotlight motion */
   @keyframes flowdesk-bar-dance {
     0%,
@@ -1103,6 +1002,312 @@
     animation: float 6s ease-in-out infinite;
   }
 
+
+  /* Loading intro — 90s Geocities-style mock site */
+  .intro-90s-site {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #000;
+    background-color: #c0c0c0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' fill='%23b8b8b8'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23b8b8b8'/%3E%3C/svg%3E");
+  }
+
+  .intro-90s-banner {
+    padding: 0.35rem 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffff00;
+    background: #000080;
+    border-bottom: 2px solid #000;
+  }
+
+  .intro-90s-blink {
+    animation: intro-blink 1s step-end infinite;
+  }
+
+  .intro-90s-header {
+    padding: 0.75rem 1rem 0.5rem;
+    text-align: center;
+    background: #000;
+  }
+
+  .intro-90s-title {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 2px 2px #ff00ff;
+  }
+
+  .intro-90s-subtitle {
+    margin-top: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ffff00;
+  }
+
+  .intro-90s-netscape {
+    margin-top: 0.35rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #c0c0c0;
+  }
+
+  .intro-90s-hr {
+    height: 2px;
+    margin: 0;
+    border: none;
+    background: #808080;
+    box-shadow: 0 1px 0 #fff;
+  }
+
+  .intro-90s-hr-rainbow {
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      #f00,
+      #ff0,
+      #0f0,
+      #0ff,
+      #00f,
+      #f0f,
+      #f00
+    );
+    box-shadow: none;
+  }
+
+  .intro-90s-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 0.75rem;
+    padding: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background: #ffffcc;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+  }
+
+  .intro-90s-nav a {
+    color: #0000ee;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .intro-90s-marquee {
+    overflow: hidden;
+    padding: 0.25rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    background: #800080;
+    border-top: 1px solid #ff00ff;
+    border-bottom: 1px solid #400040;
+  }
+
+  .intro-90s-main {
+    padding: 0.5rem;
+  }
+
+  .intro-90s-columns {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 520px) {
+    .intro-90s-columns {
+      grid-template-columns: 7.5rem 1fr;
+    }
+
+    .intro-90s-title {
+      font-size: 2.1rem;
+    }
+  }
+
+  .intro-90s-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .intro-90s-box {
+    padding: 0.35rem;
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+  }
+
+  .intro-90s-box-title {
+    margin-bottom: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000080;
+  }
+
+  .intro-90s-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .intro-90s-box li {
+    margin-top: 0.15rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+  }
+
+  .intro-90s-box a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+
+  .intro-90s-construction {
+    text-align: center;
+  }
+
+  .intro-90s-under-construction {
+    font-size: 1.5rem;
+    line-height: 1;
+    animation: intro-90s-bob 0.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes intro-90s-bob {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-3px);
+    }
+  }
+
+  .intro-90s-construction-text {
+    margin-top: 0.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #ff0000;
+  }
+
+  .intro-90s-counter {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #008000;
+    background: #000;
+    padding: 0.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .intro-90s-content {
+    padding: 0.35rem;
+    background: #fff;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+  }
+
+  .intro-90s-welcome-box {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background: #ffff99;
+    border: 2px dotted #ff0000;
+  }
+
+  .intro-90s-welcome-box h2 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 1.1rem;
+    color: #ff0000;
+  }
+
+  .intro-90s-welcome-box p {
+    margin-top: 0.35rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .intro-90s-highlight {
+    color: #ff0000;
+    font-weight: bold;
+    background: #ffff00;
+  }
+
+  .intro-90s-section-head {
+    margin: 0.5rem 0 0.25rem;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000080;
+    text-align: center;
+  }
+
+  .intro-90s-table {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    border-collapse: collapse;
+  }
+
+  .intro-90s-table td {
+    padding: 0.25rem 0.35rem;
+    border: 1px solid #808080;
+    vertical-align: top;
+  }
+
+  .intro-90s-table-label {
+    width: 30%;
+    font-weight: bold;
+    color: #000080;
+    background: #e0e0e0;
+  }
+
+  .intro-90s-content a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+
+  .intro-90s-guestbook {
+    margin-top: 0.5rem;
+    padding: 0.35rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background: #cce5ff;
+    border: 1px solid #000080;
+  }
+
+  .intro-90s-guestbook p + p {
+    margin-top: 0.25rem;
+  }
+
+  .intro-90s-footer {
+    padding: 0.35rem 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-align: center;
+    color: #000;
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+  }
+
+  .intro-90s-footer-small {
+    margin-top: 0.15rem;
+    font-size: 9px;
+    color: #404040;
+  }
 
   /* Loading intro sequence */
   .intro-stage {
@@ -1446,12 +1651,6 @@
     .animate-float-tilt,
     .animate-header-in,
     .animate-hero-glow,
-    .saas-bar,
-    .saas-orb,
-    .saas-orb-delayed,
-    .saas-scan,
-    .saas-pill,
-    .saas-card-shell,
     .flowdesk-bar,
     .flowdesk-orb,
     .flowdesk-orb-alt,
@@ -1473,6 +1672,8 @@
     .intro-loader-status,
     .intro-cursor,
     .intro-blink,
+    .intro-90s-blink,
+    .intro-90s-under-construction,
     .intro-marquee-track,
     .intro-browser-shake,
     .intro-browser-visible,

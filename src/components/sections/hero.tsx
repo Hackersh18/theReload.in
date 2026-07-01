@@ -1,4 +1,6 @@
+import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
+import { TextReveal } from "@/components/text-reveal";
 import { ButtonLink, CalButton } from "@/components/ui";
 import { Icon } from "@/components/icons";
 import { metrics } from "@/data/content";
@@ -46,17 +48,25 @@ export function Hero() {
             </Reveal>
 
             <Reveal immediate delay={80}>
-              <h1 className="mt-6 text-[2.4rem] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-5xl lg:text-[3.35rem] xl:text-6xl">
-                We build{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10">production-ready</span>
-                  <span
-                    className="absolute -bottom-1 left-0 right-0 z-0 h-[0.38em] bg-accent/55"
-                    aria-hidden
-                  />
-                </span>{" "}
-                software for ambitious teams
-              </h1>
+              <TextReveal
+                as="h1"
+                immediate
+                step={100}
+                className="mt-6 text-[2.4rem] font-extrabold leading-[1.02] tracking-tight text-foreground sm:text-5xl lg:text-[3.35rem] xl:text-6xl"
+                lines={[
+                  <span key="hero-line-1">
+                    We build{" "}
+                    <span className="relative inline-block">
+                      <span className="relative z-10">production-ready</span>
+                      <span
+                        className="absolute -bottom-1 left-0 right-0 z-0 h-[0.38em] bg-accent/55"
+                        aria-hidden
+                      />
+                    </span>
+                  </span>,
+                  "software for ambitious teams",
+                ]}
+              />
             </Reveal>
 
             <Reveal immediate delay={160}>
@@ -98,11 +108,11 @@ export function Hero() {
 
         {/* Bottom stats strip */}
         <Reveal delay={400}>
-          <div className="glass-section depth-elevated mt-14 grid grid-cols-3 gap-4 rounded-[var(--radius-bento)] p-5 sm:gap-6 sm:p-6 lg:mt-16">
-            {heroMetrics.map((m) => (
-              <div key={m.label} className="text-center lg:text-left">
+          <div className="glass-section depth-elevated border-beam mt-14 grid grid-cols-3 gap-4 rounded-[var(--radius-bento)] p-5 sm:gap-6 sm:p-6 lg:mt-16">
+            {heroMetrics.map((m, i) => (
+              <div key={m.label} className="stat-card text-center lg:text-left">
                 <p className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-                  {m.value}
+                  <CountUp value={m.value} duration={1200 + i * 200} />
                   {m.label === "Products shipped" && (
                     <span className="text-accent">+</span>
                   )}

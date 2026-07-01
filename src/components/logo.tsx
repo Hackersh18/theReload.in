@@ -10,7 +10,8 @@ export function LogoMark({ size = 32, className }: { size?: number; className?: 
       alt=""
       width={size}
       height={size}
-      className={cn("object-contain", className)}
+      className={className}
+      style={{ width: size, height: size }}
       aria-hidden
     />
   );

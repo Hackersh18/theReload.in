@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { AnimBars } from "@/components/anim-bars";
 import { Section, SectionHeader } from "@/components/bento";
 import { ServiceCard } from "@/components/service-card";
-import { Reveal } from "@/components/reveal";
+import { Reveal, RevealStagger } from "@/components/reveal";
 import { Eyebrow } from "@/components/ui";
 import { Icon } from "@/components/icons";
 import { services } from "@/data/services";
@@ -47,11 +48,14 @@ export function ServicesOverview() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="hover-3d-lift min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
+                  className="stat-card hover-3d-lift min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
                 >
-                  <p className="text-2xl font-extrabold tracking-tight text-accent">
-                    {stat.value}
-                  </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-2xl font-extrabold tracking-tight text-accent">
+                      {stat.value}
+                    </p>
+                    <AnimBars count={3} className="h-5 w-6" barClassName="w-0.5 bg-accent/50" />
+                  </div>
                   <p className="mt-0.5 text-xs font-medium text-white/55">
                     {stat.label}
                   </p>
@@ -74,11 +78,11 @@ export function ServicesOverview() {
           </div>
 
         <Reveal delay={280}>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealStagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" step={70}>
             {capabilities.map((cap) => (
               <div
                 key={cap.label}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-accent/30 hover:bg-accent/5"
+                className="stat-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-accent/30 hover:bg-accent/5"
               >
                 <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/5 text-accent">
                   <Icon name={cap.icon} size={17} />
@@ -86,7 +90,7 @@ export function ServicesOverview() {
                 <span className="text-sm font-bold text-white/80">{cap.label}</span>
               </div>
             ))}
-          </div>
+          </RevealStagger>
         </Reveal>
 
         <Reveal delay={380}>

@@ -61,14 +61,13 @@ function OldWebsiteMock() {
 
   return (
     <div className="intro-old-site flex h-full flex-col overflow-hidden bg-[#f8fafc] font-sans text-[#334155]">
-      {/* Nav */}
       <header className="flex shrink-0 items-center justify-between border-b border-[#e2e8f0] bg-white px-5 py-4 sm:px-8">
         <div className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#3b82f6] text-sm font-bold text-white">
-            N
+            S
           </div>
           <span className="text-lg font-semibold tracking-tight text-[#0f172a]">
-            Nexus Digital
+            Studio North
           </span>
         </div>
         <nav className="hidden items-center gap-6 text-sm font-medium text-[#64748b] md:flex">
@@ -86,13 +85,11 @@ function OldWebsiteMock() {
         </span>
       </header>
 
-      {/* Announcement */}
       <div className="shrink-0 border-b border-[#e2e8f0] bg-[#eff6ff] px-5 py-2.5 text-center text-xs text-[#3b82f6] sm:text-sm">
         <span className="font-medium">New:</span> We now offer mobile app development —{" "}
         <span className="underline">learn more</span>
       </div>
 
-      {/* Hero */}
       <section className="shrink-0 bg-gradient-to-br from-[#1e40af] via-[#2563eb] to-[#3b82f6] px-5 py-10 text-white sm:px-8 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200 sm:text-sm">
@@ -116,7 +113,6 @@ function OldWebsiteMock() {
         </div>
       </section>
 
-      {/* Stats */}
       <div className="grid shrink-0 grid-cols-3 divide-x divide-[#e2e8f0] border-b border-[#e2e8f0] bg-white">
         {[
           { value: "200+", label: "Projects" },
@@ -130,7 +126,6 @@ function OldWebsiteMock() {
         ))}
       </div>
 
-      {/* Services */}
       <main className="min-h-0 flex-1 overflow-y-auto px-5 py-8 sm:px-8 sm:py-10">
         <div className="mb-6 text-center sm:mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
@@ -163,7 +158,6 @@ function OldWebsiteMock() {
           ))}
         </div>
 
-        {/* CTA band */}
         <div className="mt-8 rounded-xl bg-[#f1f5f9] p-6 text-center sm:mt-10 sm:p-8">
           <h3 className="text-lg font-bold text-[#0f172a] sm:text-xl">
             Ready to start your project?
@@ -177,9 +171,8 @@ function OldWebsiteMock() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="shrink-0 border-t border-[#e2e8f0] bg-white px-5 py-4 text-center text-xs text-[#94a3b8] sm:text-sm">
-        © 2018 Nexus Digital Agency · Privacy · Terms
+        © 2018 Studio North Agency · Privacy · Terms
       </footer>
     </div>
   );
@@ -209,12 +202,10 @@ function ReloadToolbarButton({
       <Image
         src="/logo.png"
         alt=""
-        width={20}
-        height={20}
-        className={cn(
-          "h-5 w-5 shrink-0 object-contain sm:h-[22px] sm:w-[22px]",
-          clicking && "intro-reload-logo-spin",
-        )}
+        width={22}
+        height={22}
+        className={cn("shrink-0", clicking && "intro-reload-logo-spin")}
+        style={{ width: 22, height: 22 }}
         priority
       />
       <span className="text-xs font-bold tracking-tight text-accent sm:text-sm">
@@ -271,9 +262,9 @@ function LoadingBar({ phase }: { phase: "loading" | "zoom" | "exit" }) {
         <div className="mb-4 flex items-center justify-between gap-3">
           <p className="text-sm font-semibold text-white/90">Reloading site</p>
           <span className="intro-loader-dots flex gap-1" aria-hidden>
-            <span />
-            <span />
-            <span />
+            {[0, 1, 2].map((dot) => (
+              <span key={dot} />
+            ))}
           </span>
         </div>
 
@@ -306,9 +297,14 @@ export function LoadingIntro() {
   useEffect(() => {
     if (shouldSkipIntro()) return;
 
-    setActive(true);
-    document.body.classList.add("intro-active");
-    document.body.style.overflow = "hidden";
+    let cancelled = false;
+
+    const activateFrame = window.requestAnimationFrame(() => {
+      if (cancelled) return;
+      setActive(true);
+      document.body.classList.add("intro-active");
+      document.body.style.overflow = "hidden";
+    });
 
     const startMove = window.setTimeout(() => setStep("moving"), 800);
     const startClick = window.setTimeout(() => {
@@ -330,6 +326,8 @@ export function LoadingIntro() {
     }, 7000);
 
     return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(activateFrame);
       clearTimeout(startMove);
       clearTimeout(startClick);
       clearTimeout(startLoading);
@@ -356,16 +354,23 @@ export function LoadingIntro() {
     };
 
     if (step === "browse") {
-      setCursor({ ...start, visible: true });
-      return;
+      const frameId = window.requestAnimationFrame(() => {
+        setCursor({ ...start, visible: true });
+      });
+      return () => window.cancelAnimationFrame(frameId);
     }
 
     if (step === "moving") {
-      setCursor({ ...start, visible: true });
+      const frameId = window.requestAnimationFrame(() => {
+        setCursor({ ...start, visible: true });
+      });
       const id = window.setTimeout(() => {
         setCursor({ ...target, visible: true });
       }, 60);
-      return () => clearTimeout(id);
+      return () => {
+        window.cancelAnimationFrame(frameId);
+        clearTimeout(id);
+      };
     }
   }, [active, step]);
 
@@ -433,7 +438,7 @@ export function LoadingIntro() {
                   clicking={step === "clicking"}
                 />
                 <div className="ml-1 min-w-0 flex-1 truncate rounded bg-[#1e1e1e] px-3 py-1.5 text-xs text-white/50">
-                  http://nexusdigital.agency
+                  http://studionorth.agency
                 </div>
               </div>
             </div>

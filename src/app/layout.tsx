@@ -64,10 +64,10 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
-      className={jakarta.variable}
+      className={`${jakarta.variable} dark`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <LoadingIntro />
           <Navbar />
           <main>{children}</main>

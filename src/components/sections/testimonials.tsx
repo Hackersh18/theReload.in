@@ -1,8 +1,7 @@
-import { BentoCard, BentoGrid, Section, SectionHeader } from "@/components/bento";
+import { Section, SectionHeader } from "@/components/bento";
 import { Reveal } from "@/components/reveal";
-import { Avatar } from "@/components/avatar";
+import { TestimonialShowcase } from "@/components/testimonial-showcase";
 import { Eyebrow } from "@/components/ui";
-import { Icon } from "@/components/icons";
 import { testimonials } from "@/data/content";
 
 export function Testimonials() {
@@ -18,27 +17,9 @@ export function Testimonials() {
         />
       </Reveal>
 
-      <BentoGrid className="mt-10">
-        {testimonials.map((t, i) => (
-          <Reveal key={t.name} delay={i * 90}>
-            <BentoCard variant="dark" interactive className="h-full justify-between gap-6">
-              <Icon name="quote" size={28} className="text-accent" />
-              <p className="text-lg font-semibold leading-relaxed text-white sm:text-xl">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <Avatar name={t.name} />
-                <div>
-                  <p className="text-sm font-bold text-white">{t.name}</p>
-                  <p className="text-sm text-white/60">
-                    {t.role}, {t.company}
-                  </p>
-                </div>
-              </div>
-            </BentoCard>
-          </Reveal>
-        ))}
-      </BentoGrid>
+      <Reveal delay={120}>
+        <TestimonialShowcase items={testimonials} className="mt-10" />
+      </Reveal>
     </Section>
   );
 }

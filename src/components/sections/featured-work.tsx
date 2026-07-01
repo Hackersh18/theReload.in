@@ -1,6 +1,7 @@
+import { CountUp } from "@/components/count-up";
 import { SectionHeader } from "@/components/bento";
 import { ProjectCard } from "@/components/project-card";
-import { Reveal } from "@/components/reveal";
+import { Reveal, RevealStagger } from "@/components/reveal";
 import { ButtonLink, Eyebrow } from "@/components/ui";
 import { Icon } from "@/components/icons";
 import { featuredProjects } from "@/data/projects";
@@ -32,10 +33,10 @@ export function FeaturedWork() {
 
           <Reveal delay={80}>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:pb-1">
-              <div className="flex items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3">
+              <div className="stat-card flex items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3">
                 <div>
                   <p className="text-2xl font-extrabold tracking-tight text-foreground">
-                    {featuredProjects.length}+
+                    <CountUp value={`${featuredProjects.length}`} />+
                   </p>
                   <p className="text-xs font-medium text-muted">Featured builds</p>
                 </div>
@@ -68,19 +69,22 @@ export function FeaturedWork() {
         </div>
 
         <Reveal delay={300}>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-border bg-surface px-4 py-3">
+          <RevealStagger
+            className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-border bg-surface px-4 py-3"
+            step={60}
+          >
             {["SaaS", "Web Apps", "E-commerce", "Internal tools", "API platforms"].map(
               (cat) => (
                 <span
                   key={cat}
                   className="inline-flex items-center gap-2 text-xs font-bold text-muted"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent anim-soft-pulse" />
                   {cat}
                 </span>
               ),
             )}
-          </div>
+          </RevealStagger>
         </Reveal>
       </div>
     </section>

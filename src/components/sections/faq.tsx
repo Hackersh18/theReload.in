@@ -1,3 +1,4 @@
+import { RevealStagger } from "@/components/reveal";
 import { Icon } from "@/components/icons";
 import { faqs } from "@/data/content";
 
@@ -7,11 +8,11 @@ import { faqs } from "@/data/content";
  */
 export function Faq() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <RevealStagger className="grid gap-4 sm:grid-cols-2" step={70}>
       {faqs.map((faq) => (
         <details
           key={faq.question}
-          className="group rounded-[var(--radius-bento)] border border-border bg-surface p-5 transition-colors duration-300 hover:border-border-strong [&_summary::-webkit-details-marker]:hidden"
+          className="group stat-card rounded-[var(--radius-bento)] border border-border bg-surface p-5 transition-colors duration-300 hover:border-border-strong [&_summary::-webkit-details-marker]:hidden"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-foreground">
             {faq.question}
@@ -26,6 +27,6 @@ export function Faq() {
           </p>
         </details>
       ))}
-    </div>
+    </RevealStagger>
   );
 }

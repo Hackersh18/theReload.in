@@ -51,6 +51,10 @@
   --glass-nav-blur: blur(20px) saturate(200%);
 
   --nav-offset: 5.25rem;
+
+  /* Fixed charcoal surfaces — do not flip with theme */
+  --inverse: #0a0a0a;
+  --inverse-fg: #ffffff;
 }
 
 .dark {
@@ -115,6 +119,8 @@
   --color-purple-foreground: var(--purple-foreground);
   --color-purple-subtle: var(--purple-subtle);
   --color-ring: var(--ring);
+  --color-inverse: var(--inverse);
+  --color-inverse-fg: var(--inverse-fg);
 
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
@@ -346,6 +352,27 @@
     );
   }
 
+  /* Footer watermark — large brand mark like 100xDevs */
+  .footer-watermark {
+    margin-top: -1.5rem;
+    padding: 0 1rem 0.5rem;
+    font-size: clamp(4.5rem, 20vw, 13rem);
+    font-weight: 800;
+    line-height: 0.82;
+    text-align: center;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.033) 55%,
+      rgba(255, 255, 255, 0.011) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   /* Faint SoftSole watermark behind hero */
   .bg-watermark {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'%3E%3Crect x='8' y='8' width='48' height='48' rx='10' fill='%23c6ff00' fill-opacity='0.12'/%3E%3Crect x='64' y='8' width='48' height='48' rx='10' fill='%236b4eff' fill-opacity='0.08'/%3E%3Crect x='8' y='64' width='48' height='48' rx='10' fill='%236b4eff' fill-opacity='0.08'/%3E%3Crect x='64' y='64' width='48' height='48' rx='10' fill='%23c6ff00' fill-opacity='0.12'/%3E%3C/svg%3E");
@@ -402,6 +429,219 @@
     opacity: 1;
     transform: translate(0, 0);
     filter: blur(0);
+  }
+
+  /* Nexus-style staggered children */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(
+      var(--stagger-base, 0ms) + var(--stagger-i, 0) * var(--stagger-step, 80ms)
+    );
+    will-change: opacity, transform;
+  }
+
+  .reveal-stagger.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-entrance {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .hero-entrance.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Pulsing bars */
+  .anim-bar {
+    transform-origin: center bottom;
+    animation: anim-bar 2.4s ease-in-out infinite;
+  }
+
+  @keyframes anim-bar {
+    0%,
+    100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.55);
+    }
+  }
+
+  .anim-soft-pulse {
+    animation: anim-soft-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes anim-soft-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  .anim-float-subtle {
+    animation: anim-float-subtle 4.5s ease-in-out infinite;
+  }
+
+  @keyframes anim-float-subtle {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(3px, -4px);
+    }
+  }
+
+  /* Dual-direction marquees */
+  .animate-marquee-left {
+    animation: marquee-scroll 36s linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-scroll 36s linear infinite reverse;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Vertical ticker */
+  .anim-scroll-y {
+    animation: anim-scroll-y 7s linear infinite;
+  }
+
+  @keyframes anim-scroll-y {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  /* Testimonial tab switch */
+  @keyframes testimonial-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tm-item {
+    animation: testimonial-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .tm-item:nth-child(2) {
+    animation-delay: 0.06s;
+  }
+
+  .tm-item:nth-child(3) {
+    animation-delay: 0.12s;
+  }
+
+  /* Border beam accent */
+  .border-beam {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .border-beam::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--beam-angle, 0deg),
+      transparent 0deg,
+      rgba(198, 255, 0, 0.55) 60deg,
+      transparent 120deg
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-beam 4s linear infinite;
+    pointer-events: none;
+  }
+
+  @property --beam-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes border-beam {
+    to {
+      --beam-angle: 360deg;
+    }
+  }
+
+  /* Step progress bars */
+  .bar-travel {
+    animation: bar-travel 2.8s ease-in-out infinite;
+  }
+
+  @keyframes bar-travel {
+    0% {
+      background-color: var(--border);
+    }
+    4% {
+      background-color: var(--accent);
+    }
+    11% {
+      background-color: var(--accent);
+    }
+    15% {
+      background-color: var(--border);
+    }
+    100% {
+      background-color: var(--border);
+    }
+  }
+
+  /* Stat card hover lift */
+  .stat-card {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-4px);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   .animate-header-in {
@@ -834,7 +1074,9 @@
   .animate-marquee {
     animation: marquee 38s linear infinite;
   }
-  .group\/marquee:hover .animate-marquee {
+  .group\/marquee:hover .animate-marquee,
+  .group\/marquee:hover .animate-marquee-left,
+  .group\/marquee:hover .animate-marquee-right {
     animation-play-state: paused;
   }
 
@@ -860,6 +1102,7 @@
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
+
 
   /* Loading intro sequence */
   .intro-stage {
@@ -1173,13 +1416,30 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal {
+    .reveal,
+    .reveal-stagger > * {
       opacity: 1;
       transform: none;
       filter: none;
       transition: none;
     }
+    .hero-entrance {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .tm-item {
+      animation: none;
+    }
     .animate-marquee,
+    .animate-marquee-left,
+    .animate-marquee-right,
+    .anim-bar,
+    .anim-soft-pulse,
+    .anim-float-subtle,
+    .anim-scroll-y,
+    .bar-travel,
+    .border-beam::before,
     .animate-float,
     .card-3d-float,
     .hero-3d-cube,

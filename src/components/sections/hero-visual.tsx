@@ -65,11 +65,11 @@ export function HeroVisual({ className }: { className?: string }) {
               {bars.map((h, i) => (
                 <div
                   key={i}
-                  className="flex-1 rounded-t-md bg-accent/80 transition-all duration-500"
+                  className="anim-bar flex-1 rounded-t-md bg-accent/80"
                   style={{
                     height: `${h}%`,
                     opacity: 0.35 + (i / bars.length) * 0.65,
-                    transform: `translateZ(${i * 2}px)`,
+                    animationDelay: `${i * 0.15}s`,
                   }}
                 />
               ))}

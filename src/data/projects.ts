@@ -2,6 +2,139 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    slug: "avviare-educations",
+    name: "Avviare Educations",
+    tagline: "College website for BBA, BCA, MBA, MCA & PGDM programs",
+    category: "EdTech",
+    outcome: "Live admissions site driving enquiries across Noida",
+    color: "#0d4f3c",
+    initials: "Av",
+    year: "2025",
+    url: "https://avviareeducations.org",
+    caseStudy: {
+      duration: "6 weeks",
+      role: "Website design & full-stack build",
+      services: ["Website Development", "SEO", "Lead Capture"],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      challenge:
+        "Avviare needed a credible, fast college website that showcased programs, campus life, and admissions — and turned visitor traffic into qualified enquiries for counsellors.",
+      approach: [
+        "Structured program pages for BBA, BCA, MBA, MCA, and AICTE-approved PGDM with clear CTAs.",
+        "Built a mobile-first marketing site with enquiry forms wired into the admissions workflow.",
+        "Optimised for local SEO, performance, and accessibility so prospects trust the brand on first visit.",
+      ],
+      results: [
+        { value: "Live", label: "Production at avviareeducations.org" },
+        { value: "5+", label: "Program pages shipped" },
+        { value: "AA", label: "Performance & SEO baseline" },
+      ],
+      quote: {
+        text: "The site finally reflects who we are as an institute — parents and students get it immediately.",
+        name: "Admissions Team",
+        role: "Avviare Educational Hub",
+      },
+    },
+  },
+  {
+    slug: "crm-portal",
+    name: "CRM Portal",
+    tagline: "College & institute lead management for admins and counsellors",
+    category: "SaaS",
+    outcome: "End-to-end CRM for leads, follow-ups, and counsellor pipelines",
+    color: "#1e40af",
+    initials: "CP",
+    year: "2025",
+    caseStudy: {
+      duration: "12 weeks",
+      role: "Product design & Django full-stack build",
+      services: ["Full-Stack Development", "SaaS Product Development", "Android"],
+      tech: ["Django", "PostgreSQL", "Redis", "Celery", "Kotlin"],
+      challenge:
+        "Admissions teams were juggling spreadsheets, WhatsApp threads, and missed follow-ups. They needed one CRM for lead intake, counsellor assignment, activities, targets, and reporting.",
+      approach: [
+        "Built a Django CRM with separate admin and counsellor workspaces, granular permissions, and analytics.",
+        "Shipped bulk lead import from CSV/Excel, webhook intake from the website, and visit scheduling flows.",
+        "Extended access with a Kotlin Android app and API layer for counsellors in the field.",
+      ],
+      results: [
+        { value: "2", label: "Role-based portals" },
+        { value: "CSV/XLSX", label: "Bulk lead import" },
+        { value: "API", label: "Website webhook + mobile" },
+      ],
+      quote: {
+        text: "Counsellors finally work from one system — assignments, follow-ups, and targets are all visible.",
+        name: "Operations Lead",
+        role: "Institute CRM team",
+      },
+    },
+  },
+  {
+    slug: "ai-interviewer",
+    name: "AI Interviewer Agent",
+    tagline: "Automated screening interviews for admissions and hiring",
+    category: "AI",
+    outcome: "24/7 AI-led interviews with structured scoring and summaries",
+    color: "#7c3aed",
+    initials: "AI",
+    year: "2025",
+    caseStudy: {
+      duration: "8 weeks",
+      role: "AI agent design & integration",
+      services: ["AI Agents", "Feature Implementation", "Chatbots"],
+      tech: ["OpenAI", "Python", "Next.js", "PostgreSQL", "WebRTC"],
+      challenge:
+        "Counsellors spent hours on repetitive first-round interviews. The institute needed consistent screening at scale without losing signal on candidate fit.",
+      approach: [
+        "Designed an interviewer agent with role-specific question banks and adaptive follow-ups.",
+        "Captured responses via voice and text, then generated structured scorecards and transcript summaries.",
+        "Routed high-intent candidates to human counsellors with full context from the AI session.",
+      ],
+      results: [
+        { value: "24/7", label: "Interview availability" },
+        { value: "70%", label: "Less counsellor screening time" },
+        { value: "Auto", label: "Scored summaries per candidate" },
+      ],
+      quote: {
+        text: "We screen more applicants without burning out the team — and handoffs to counsellors are much sharper.",
+        name: "Admissions Director",
+        role: "Education client",
+      },
+    },
+  },
+  {
+    slug: "ai-appointment-scheduler",
+    name: "AI Appointment Scheduler",
+    tagline: "Smart booking for campus visits and counsellor calls",
+    category: "AI",
+    outcome: "Conversational scheduling synced with counsellor calendars",
+    color: "#0891b2",
+    initials: "AS",
+    year: "2025",
+    caseStudy: {
+      duration: "5 weeks",
+      role: "AI workflow & CRM integration",
+      services: ["AI Agents", "Chatbots", "Feature Implementation"],
+      tech: ["OpenAI", "Django", "Cal.com API", "WhatsApp", "Webhooks"],
+      challenge:
+        "Prospects dropped off when booking a visit required back-and-forth calls. The team needed instant scheduling that respected counsellor availability and CRM records.",
+      approach: [
+        "Built a conversational scheduler on web and WhatsApp that collects intent, program interest, and preferred slots.",
+        "Synced confirmed appointments to the CRM Portal with automatic counsellor assignment rules.",
+        "Added reminders, rescheduling, and no-show follow-ups to keep the pipeline moving.",
+      ],
+      results: [
+        { value: "3×", label: "More visits booked" },
+        { value: "<2 min", label: "Avg. booking time" },
+        { value: "CRM", label: "Auto-synced activities" },
+      ],
+      quote: {
+        text: "Students book campus visits in minutes — our counsellors show up prepared because the CRM already has context.",
+        name: "Counsellor Lead",
+        role: "Admissions team",
+      },
+    },
+  },
+  {
     slug: "flowdesk",
     name: "Flowdesk",
     tagline: "B2B SaaS productivity dashboard",
@@ -201,7 +334,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects.slice(0, 3);
+export const featuredProjects = projects.slice(0, 4);
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
@@ -209,6 +342,8 @@ export function getProject(slug: string): Project | undefined {
 
 export const projectCategories = [
   "All",
+  "EdTech",
+  "AI",
   "Web Apps",
   "Design",
   "SaaS",

@@ -7,16 +7,16 @@ import { Eyebrow } from "@/components/ui";
 import { Icon } from "@/components/icons";
 import { services } from "@/data/services";
 
-/** Home preview — equal cards; SaaS in the centre gets animated highlight. */
-const preview = [services[0], services[2], services[1]];
+/** Home preview — full-stack, websites, AI agents. */
+const preview = [services[0], services[1], services[3]];
 
 const capabilities = [
-  { icon: "code" as const, label: "Full-stack builds" },
-  { icon: "layers" as const, label: "SaaS products" },
-  { icon: "plug" as const, label: "API integrations" },
-  { icon: "compass" as const, label: "Architecture" },
-  { icon: "rocket" as const, label: "Fast launches" },
-  { icon: "lifebuoy" as const, label: "Post-launch support" },
+  { icon: "code" as const, label: "Full-stack & MERN" },
+  { icon: "globe" as const, label: "WordPress & Next.js sites" },
+  { icon: "smartphone" as const, label: "Android & Kotlin" },
+  { icon: "sparkles" as const, label: "AI agents" },
+  { icon: "messageCircle" as const, label: "Chatbots" },
+  { icon: "compass" as const, label: "Consultation" },
 ];
 
 export function ServicesOverview() {
@@ -34,7 +34,7 @@ export function ServicesOverview() {
             <SectionHeader
               eyebrow={<Eyebrow variant="lime">Our Services</Eyebrow>}
               title="Everything you need to ship software"
-              description="From architecture to launch — we cover the full stack so your team can move fast without cutting corners."
+              description="Full-stack development, websites, Android apps, AI agents, chatbots, feature builds, and consultation — from discovery to production."
               inverted
               className="max-w-2xl"
             />
@@ -43,12 +43,12 @@ export function ServicesOverview() {
           <Reveal delay={80}>
             <div className="flex gap-3 lg:pb-2">
               {[
-                { value: "5", label: "Core services" },
+                { value: String(services.length), label: "Core services" },
                 { value: "6–12", label: "Week avg. delivery" },
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="stat-card hover-3d-lift min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
+                  className="stat-card min-w-[120px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <p className="text-2xl font-extrabold tracking-tight text-accent">
@@ -67,7 +67,7 @@ export function ServicesOverview() {
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
             {preview.map((service, i) => (
-              <Reveal key={service.slug} delay={i * 100} className="min-h-0">
+              <Reveal key={service.slug} delay={i * 100} className="relative min-h-0 hover:z-10">
                 <ServiceCard
                   service={service}
                   variant="compact"
@@ -78,11 +78,14 @@ export function ServicesOverview() {
           </div>
 
         <Reveal delay={280}>
-          <RevealStagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" step={70}>
+          <RevealStagger
+            className="relative z-0 mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
+            step={70}
+          >
             {capabilities.map((cap) => (
               <div
                 key={cap.label}
-                className="stat-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-accent/30 hover:bg-accent/5"
+                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 transition-colors hover:border-accent/30 hover:bg-accent/5"
               >
                 <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/5 text-accent">
                   <Icon name={cap.icon} size={17} />

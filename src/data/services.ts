@@ -2,79 +2,204 @@ import type { Service } from "@/types";
 
 export const services: Service[] = [
   {
-    slug: "full-stack-web-development",
+    slug: "full-stack-development",
     icon: "code",
-    title: "Full-Stack Web Development",
-    summary: "Type-safe apps built to scale from launch to your millionth user.",
+    title: "Full-Stack Development",
+    summary:
+      "Production-grade apps from database to UI — Next.js, MERN, APIs, and infrastructure that scales.",
     description:
-      "We build production web applications end to end — from the data model to the pixels. Our stack favours boring, reliable technology and rigorous testing, so the thing we ship on day one is still maintainable two years later.",
-    process: [
-      "Architecture & data modelling",
-      "Component-driven UI build",
-      "Automated testing & CI",
-      "Performance & accessibility audit",
+      "We engineer complete products end to end: typed front-ends, resilient APIs, data models, auth, and deployment pipelines. Whether you are launching an MVP or hardening an existing platform, we pick the right stack and ship code your team can maintain.",
+    offerings: [
+      "Next.js & React applications",
+      "MERN stack builds (MongoDB, Express, React, Node)",
+      "REST & GraphQL API design",
+      "PostgreSQL, MongoDB & Redis",
+      "Auth, roles, billing & admin dashboards",
+      "CI/CD, testing & production monitoring",
     ],
-    tags: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    process: [
+      "Architecture & stack selection",
+      "Data modelling & API contracts",
+      "Front-end & back-end implementation",
+      "QA, performance & security review",
+      "Deployment & handoff documentation",
+    ],
+    tags: ["Next.js", "MERN", "TypeScript", "Node.js", "PostgreSQL", "MongoDB"],
   },
   {
-    slug: "ui-ux-product-design",
-    icon: "penTool",
-    title: "UI/UX & Product Design",
-    summary: "Interfaces that feel obvious — backed by a real design system.",
+    slug: "website-development",
+    icon: "globe",
+    title: "Website Development",
+    summary:
+      "Fast, conversion-focused sites on WordPress, Next.js, or MERN — built for SEO and easy updates.",
     description:
-      "Design that earns its keep. We map the jobs your users are hiring your product for, prototype the flows, and hand off a documented design system your engineers will actually enjoy building against.",
-    process: [
-      "User & product discovery",
-      "Wireframes & prototypes",
-      "High-fidelity design system",
-      "Engineering handoff & QA",
+      "Not every project needs a full product build. We deliver marketing sites, company pages, blogs, and content-driven experiences on the stack that fits your team — from WordPress CMS workflows to blazing Next.js front-ends and custom MERN applications.",
+    offerings: [
+      "Custom WordPress themes & plugins",
+      "Headless WordPress + Next.js",
+      "Next.js marketing & landing pages",
+      "MERN stack content apps",
+      "SEO, analytics & performance tuning",
+      "Hosting, DNS & launch support",
     ],
-    tags: ["Figma", "Design Systems", "Prototyping", "User Research"],
+    process: [
+      "Content & sitemap planning",
+      "Design or theme implementation",
+      "CMS setup & editor training",
+      "Integrations (forms, CRM, analytics)",
+      "Launch, SEO baseline & support",
+    ],
+    tags: ["WordPress", "Next.js", "MERN", "SEO", "CMS", "Vercel"],
+  },
+  {
+    slug: "android-development",
+    icon: "smartphone",
+    title: "Android Development",
+    summary:
+      "Native Android apps in Kotlin — plus WebView and TWA wrappers when speed-to-market matters.",
+    description:
+      "We build Android experiences that feel native on device and integrate cleanly with your back-end. Ship a full Kotlin app with Jetpack Compose, or wrap your existing web product in a polished Android shell for the Play Store.",
+    offerings: [
+      "Native Android with Kotlin",
+      "Jetpack Compose UI",
+      "WebView & Trusted Web Activity wrappers",
+      "Play Store submission & updates",
+      "Push notifications & deep linking",
+      "API integration & offline support",
+    ],
+    process: [
+      "Platform strategy (native vs wrapper)",
+      "UI/UX & navigation architecture",
+      "Kotlin development & API wiring",
+      "Device testing & Play Store prep",
+      "Release, monitoring & iteration",
+    ],
+    tags: ["Kotlin", "Android", "Jetpack Compose", "WebView", "TWA", "Play Store"],
+  },
+  {
+    slug: "ai-agents",
+    icon: "sparkles",
+    title: "AI Agents",
+    summary:
+      "Custom agents that automate workflows, reason over your data, and integrate with your tools.",
+    description:
+      "Go beyond a chat box. We design AI agents that take action — querying your database, calling APIs, drafting documents, triaging tickets, and running multi-step workflows with guardrails, logging, and human-in-the-loop controls.",
+    offerings: [
+      "Custom LLM agent design",
+      "Tool use & API orchestration",
+      "RAG over docs, wikis & databases",
+      "Workflow automation (n8n, custom pipelines)",
+      "Evaluation, prompt tuning & cost control",
+      "Secure deployment & access policies",
+    ],
+    process: [
+      "Use-case mapping & success metrics",
+      "Data sources & tool integration",
+      "Agent prototyping & eval suite",
+      "Production deployment & monitoring",
+      "Iteration & team enablement",
+    ],
+    tags: ["OpenAI", "Claude", "RAG", "LangChain", "Automation", "Agents"],
+  },
+  {
+    slug: "chatbots",
+    icon: "messageCircle",
+    title: "Chatbots",
+    summary:
+      "Support, sales, and onboarding bots for web, WhatsApp, and in-app — trained on your content.",
+    description:
+      "We build conversational experiences that actually resolve requests. From FAQ bots on your marketing site to support assistants wired into your CRM, we handle conversation design, retrieval, escalation paths, and analytics.",
+    offerings: [
+      "Website & in-app chat widgets",
+      "WhatsApp & messaging integrations",
+      "Knowledge-base & document-trained bots",
+      "Lead capture & CRM handoff",
+      "Human escalation & ticket routing",
+      "Conversation analytics & tuning",
+    ],
+    process: [
+      "Conversation flows & intents",
+      "Knowledge ingestion & RAG setup",
+      "Widget / channel integration",
+      "Testing with real user scenarios",
+      "Launch, monitor & improve responses",
+    ],
+    tags: ["Chatbots", "RAG", "WhatsApp", "Support", "CRM", "Widgets"],
+  },
+  {
+    slug: "feature-implementation",
+    icon: "plus",
+    title: "Feature Implementation",
+    summary:
+      "Ship the next slice fast — new modules, integrations, and product features in existing codebases.",
+    description:
+      "Already have a product? We embed with your team to design and deliver specific features — payment flows, dashboards, admin tools, third-party integrations, or entire user-facing modules — without derailing your roadmap.",
+    offerings: [
+      "New product features & user flows",
+      "Third-party API integrations",
+      "Payment, auth & subscription upgrades",
+      "Admin panels & internal tools",
+      "Performance & refactor passes",
+      "Brownfield code review & hardening",
+    ],
+    process: [
+      "Scope & technical discovery",
+      "Implementation plan & milestones",
+      "Feature build in your repo",
+      "Code review, tests & documentation",
+      "Staged rollout & post-ship support",
+    ],
+    tags: ["Integrations", "Stripe", "Dashboards", "Refactors", "APIs", "MVP"],
+  },
+  {
+    slug: "technical-consultation",
+    icon: "compass",
+    title: "Technical Consultation",
+    summary:
+      "Senior guidance on architecture, stack choices, audits, and roadmaps — before you commit budget.",
+    description:
+      "Sometimes you need clarity more than capacity. We help founders and engineering leads make the right technical calls: stack selection, architecture reviews, hiring plans, cost optimisation, and phased roadmaps you can execute with confidence.",
+    offerings: [
+      "Architecture & codebase audits",
+      "Stack selection (Next.js vs MERN vs WordPress)",
+      "Mobile strategy (native vs web wrapper)",
+      "AI readiness & integration planning",
+      "Scaling, security & cost reviews",
+      "Roadmap & team structure advice",
+    ],
+    process: [
+      "Goals, constraints & context review",
+      "System / codebase assessment",
+      "Written recommendations & options",
+      "Roadmap & priority matrix",
+      "Optional follow-up implementation support",
+    ],
+    tags: ["Architecture", "Audits", "Roadmaps", "Strategy", "Due Diligence"],
   },
   {
     slug: "saas-product-development",
     icon: "layers",
     title: "SaaS Product Development",
-    summary: "From zero to a billable product — multi-tenant, metered, and ready.",
+    summary:
+      "From zero to billable — multi-tenant products with auth, billing, dashboards, and admin tooling.",
     description:
-      "We take SaaS ideas from whiteboard to revenue. Auth, billing, multi-tenancy, dashboards, and the unglamorous plumbing that makes a subscription business actually run — built so you can iterate without rewrites.",
+      "We take SaaS ideas from whiteboard to revenue. Auth, billing, multi-tenancy, onboarding, and the unglamorous plumbing that makes a subscription business run — built so you can iterate without rewrites.",
+    offerings: [
+      "Multi-tenant architecture",
+      "Stripe billing & usage metering",
+      "Onboarding & self-serve flows",
+      "Customer & admin dashboards",
+      "Team roles & permissions",
+      "Analytics, webhooks & integrations",
+    ],
     process: [
-      "MVP scoping & roadmap",
-      "Auth, billing & tenancy",
+      "MVP scoping & phased roadmap",
+      "Auth, billing & tenancy foundation",
       "Core product build",
-      "Launch & iteration loop",
+      "Beta launch & feedback loop",
+      "Scale, monitor & iterate",
     ],
-    tags: ["Stripe", "Multi-tenancy", "Dashboards", "Auth"],
-  },
-  {
-    slug: "technical-consulting-architecture",
-    icon: "compass",
-    title: "Technical Consulting & Architecture",
-    summary: "A senior team to pressure-test decisions before they get expensive.",
-    description:
-      "Sometimes you don't need more hands — you need the right call. We review architecture, untangle legacy systems, and write the technical plan that lets your team move fast without painting itself into a corner.",
-    process: [
-      "System & codebase review",
-      "Architecture recommendations",
-      "Scaling & cost plan",
-      "Team enablement",
-    ],
-    tags: ["System Design", "Cloud", "DevOps", "Audits"],
-  },
-  {
-    slug: "api-design-integration",
-    icon: "plug",
-    title: "API Design & Integration",
-    summary: "APIs that are a pleasure to consume and survive 3am traffic spikes.",
-    description:
-      "Well-designed APIs are a product in themselves. We design clear contracts, build resilient integrations with third parties, and instrument everything so you know exactly what's happening in production.",
-    process: [
-      "Contract & schema design",
-      "Implementation & docs",
-      "Third-party integrations",
-      "Monitoring & rate limiting",
-    ],
-    tags: ["REST", "GraphQL", "Webhooks", "OpenAPI"],
+    tags: ["SaaS", "Stripe", "Multi-tenancy", "Dashboards", "Auth", "B2B"],
   },
 ];
 

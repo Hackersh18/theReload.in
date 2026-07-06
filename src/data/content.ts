@@ -1,46 +1,64 @@
-import type { ClientLogo, Faq, Metric, Testimonial } from "@/types";
+import type { ClientLogo, Faq, Metric, ProductType, Testimonial } from "@/types";
+import testimonialsData from "../../data/cms/testimonials.json";
 
 export const metrics: Metric[] = [
-  { value: "120", label: "Products shipped" },
-  { value: "98%", label: "Client retention" },
-  { value: "8", label: "Countries served" },
-  { value: "4.2M", label: "Lines of production code" },
+  { value: "10", label: "Products shipped" },
+  { value: "4", label: "Live production builds" },
+  { value: "8", label: "Core services" },
+  { value: "70", label: "Less screening time with AI" },
 ];
 
 export const clientLogos: ClientLogo[] = [
-  { name: "Northwind" },
-  { name: "Brightloop" },
-  { name: "Cobalt" },
-  { name: "Driftwood" },
-  { name: "Vela" },
-  { name: "Quanta" },
-  { name: "Mosaic" },
-  { name: "Harborline" },
+  { name: "Avviare Educations" },
+  { name: "CRM Portal" },
+  { name: "AI Interviewer Agent" },
+  { name: "AI Appointment Scheduler" },
 ];
 
-export const testimonials: Testimonial[] = [
+export const productTypes: ProductType[] = [
   {
-    quote:
-      "They shipped faster than our last two agencies combined, and the code was clean enough that our team picked it up without a single handover call.",
-    name: "Dana Whitfield",
-    role: "VP of Engineering",
-    company: "Brightloop",
+    title: "ERP systems",
+    description: "Finance, inventory, operations, and reporting in one connected platform.",
+    icon: "layers",
   },
   {
-    quote:
-      "Reload scoped our MVP ruthlessly, built the billing and auth plumbing right, and got us to revenue in ten weeks. Exactly what a pre-seed team needs.",
-    name: "Marcus Lee",
-    role: "Founder & CEO",
-    company: "Cobalt",
+    title: "Employee management portals",
+    description: "HR workflows, attendance, leave, payroll hooks, and team self-service.",
+    icon: "code",
   },
   {
-    quote:
-      "The architecture they put in place let us scale from 200 to 20,000 users without a rewrite. That's the kind of engineering judgment you want early.",
-    name: "Priya Nair",
-    role: "CTO",
-    company: "Vela",
+    title: "Management portals",
+    description: "Custom admin dashboards for operations, approvals, and internal tooling.",
+    icon: "plug",
+  },
+  {
+    title: "College websites",
+    description: "Admissions, programs, lead capture, and CMS-ready sites for institutions.",
+    icon: "globe",
+  },
+  {
+    title: "E-commerce websites",
+    description: "Product catalogs, checkout flows, and storefronts built to convert.",
+    icon: "rocket",
+  },
+  {
+    title: "Wrapper apps",
+    description: "Native Android shells around your web product with push, auth, and store launch.",
+    icon: "smartphone",
+  },
+  {
+    title: "AI agents",
+    description: "Automated screening, scheduling, support, and workflow agents on your data.",
+    icon: "bot",
+  },
+  {
+    title: "CRM software",
+    description: "Pipelines, contacts, activity tracking, and sales tooling your team actually uses.",
+    icon: "messageCircle",
   },
 ];
+
+export const testimonials: Testimonial[] = testimonialsData as Testimonial[];
 
 export const faqs: Faq[] = [
   {

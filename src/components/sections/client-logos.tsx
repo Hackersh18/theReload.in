@@ -7,8 +7,8 @@ export function ClientLogos() {
   return (
     <Section>
       <SectionHeader
-        eyebrow={<Eyebrow>Selected clients</Eyebrow>}
-        title="Teams we've shipped alongside"
+        eyebrow={<Eyebrow>Portfolio</Eyebrow>}
+        title="Products we've shipped"
         align="center"
         className="mx-auto"
       />

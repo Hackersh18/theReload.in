@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Section, SectionHeader } from "@/components/bento";
 import { PageHero } from "@/components/sections/page-hero";
+import { ProductsWeBuild } from "@/components/sections/products-we-build";
 import { CtaSection } from "@/components/sections/cta";
 import { ServiceCard } from "@/components/service-card";
 import { Reveal } from "@/components/reveal";
@@ -11,7 +12,7 @@ import { services, processSteps } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Full-stack web development, SaaS builds, and technical consulting — Reload helps teams ship production-ready software.",
+    "Full-stack development, WordPress & Next.js websites, MERN stack, Android with Kotlin, AI agents, ERP, CRM, management portals, e-commerce, and technical consultation.",
   alternates: { canonical: "/services" },
 };
 
@@ -21,7 +22,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="What we do"
         title="Expertise that ships to production"
-        description="Full-stack web development, SaaS product builds, APIs, and technical consulting — scoped for real engineering outcomes."
+        description="Full-stack development, websites, Android apps, AI agents, ERP, CRM, management portals, e-commerce, and technical consultation — from discovery to production."
       />
 
       <Section dark className="relative overflow-hidden">
@@ -33,7 +34,7 @@ export default function ServicesPage() {
         <Reveal>
           <SectionHeader
             eyebrow={<Eyebrow variant="lime">Capabilities</Eyebrow>}
-            title="Five ways we help teams ship"
+            title={`${services.length} ways we help teams ship`}
             description="Pick a lane or combine them — every engagement ends in working software in production."
             inverted
             align="center"
@@ -43,7 +44,7 @@ export default function ServicesPage() {
 
         <div className="relative mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
-            <Reveal key={service.slug} delay={(i % 3) * 90}>
+            <Reveal key={service.slug} delay={(i % 3) * 90} className="relative hover:z-10">
               <ServiceCard
                 service={service}
                 variant="full"
@@ -53,6 +54,8 @@ export default function ServicesPage() {
           ))}
         </div>
       </Section>
+
+      <ProductsWeBuild />
 
       <Section className="pt-4">
         <Reveal>

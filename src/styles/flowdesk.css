@@ -1,0 +1,134 @@
+@layer utilities {
+/* Flowdesk project card — spotlight motion */
+  @keyframes flowdesk-bar-dance {
+    0%,
+    100% {
+      transform: scaleY(0.68);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes flowdesk-orb-drift {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(14px, -8px) scale(1.1);
+      opacity: 0.75;
+    }
+  }
+
+  @keyframes flowdesk-orb-drift-alt {
+    0%,
+    100% {
+      transform: translate(0, 0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(-12px, 10px);
+      opacity: 0.55;
+    }
+  }
+
+  @keyframes flowdesk-scan {
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes flowdesk-step-glow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    50% {
+      transform: scale(1.35);
+      opacity: 1;
+    }
+  }
+
+  @keyframes flowdesk-pill-pop {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes flowdesk-metric-pulse {
+    0%,
+    100% {
+      color: #c6ff00;
+      text-shadow: 0 0 0 transparent;
+    }
+    50% {
+      color: #e4ff66;
+      text-shadow: 0 0 12px rgba(198, 255, 0, 0.55);
+    }
+  }
+
+  @keyframes flowdesk-glow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 28px rgba(79, 70, 229, 0.12);
+    }
+    50% {
+      box-shadow: 0 0 52px rgba(79, 70, 229, 0.22);
+    }
+  }
+
+  .flowdesk-bar {
+    animation: flowdesk-bar-dance 2.2s ease-in-out infinite;
+    animation-delay: var(--flowdesk-delay, 0s);
+  }
+
+  .flowdesk-orb {
+    animation: flowdesk-orb-drift 5.5s ease-in-out infinite;
+  }
+
+  .flowdesk-orb-alt {
+    animation: flowdesk-orb-drift-alt 6.5s ease-in-out infinite;
+  }
+
+  .flowdesk-scan {
+    animation: flowdesk-scan 3.8s ease-in-out infinite;
+  }
+
+  .flowdesk-step {
+    animation: flowdesk-step-glow 2.6s ease-in-out infinite;
+  }
+
+  .flowdesk-pill {
+    animation: flowdesk-pill-pop 2.9s ease-in-out infinite;
+  }
+
+  .flowdesk-metric-pulse {
+    animation: flowdesk-metric-pulse 2s ease-in-out infinite;
+  }
+
+  .flowdesk-card-shell {
+    animation: flowdesk-glow-pulse 3.2s ease-in-out infinite;
+  }
+}

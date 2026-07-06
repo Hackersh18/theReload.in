@@ -1,0 +1,129 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  SoftSole theme — lime + charcoal accents on light hero and dark sections.
+  Light hero + dark bento sections. Neon lime + vibrant purple accents.
+*/
+:root {
+  --background: #f4f4f4;
+  --surface: #ffffff;
+  --surface-muted: #ebebeb;
+  --foreground: #0a0a0a;
+  --muted: #5c5c5c;
+  --border: #dedede;
+  --border-strong: #c8c8c8;
+
+  --accent: #c6ff00;
+  --accent-hover: #b8ef00;
+  --accent-foreground: #0a0a0a;
+  --accent-subtle: #f2ffd6;
+
+  --purple: #6b4eff;
+  --purple-hover: #5a3de8;
+  --purple-foreground: #ffffff;
+  --purple-subtle: #ede9ff;
+
+  --ring: #6b4eff;
+  --radius-bento: 1.75rem;
+  --radius-section: 3rem;
+
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-pill-bg: rgba(255, 255, 255, 0.5);
+  --glass-pill-border: rgba(255, 255, 255, 0.65);
+  --glass-pill-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  --glass-nav-bg: rgba(255, 255, 255, 0.82);
+  --glass-nav-border: rgba(255, 255, 255, 0.55);
+  --nav-link-idle: rgba(10, 10, 10, 0.62);
+  --nav-link-active: #0a0a0a;
+
+  --glass-dark-bg: rgba(10, 10, 10, 0.78);
+  --glass-dark-border: rgba(255, 255, 255, 0.1);
+  --glass-dark-highlight: rgba(255, 255, 255, 0.08);
+
+  --glass-blur: blur(12px) saturate(140%);
+  --glass-blur-strong: blur(20px) saturate(140%);
+  --glass-nav-blur: blur(12px) saturate(150%);
+
+  --nav-offset: 5.25rem;
+  --hero-top-gap: 1.75rem;
+
+  /* Fixed charcoal surfaces — do not flip with theme */
+  --inverse: #0a0a0a;
+  --inverse-fg: #ffffff;
+}
+
+.dark {
+  --background: #000000;
+  --surface: #141414;
+  --surface-muted: #1c1c1c;
+  --foreground: #ffffff;
+  --muted: #a3a3a3;
+  --border: #2a2a2a;
+  --border-strong: #383838;
+
+  --accent: #c6ff00;
+  --accent-hover: #d4ff33;
+  --accent-foreground: #0a0a0a;
+  --accent-subtle: #1a2200;
+
+  --purple: #7c5cff;
+  --purple-hover: #6b4eff;
+  --purple-foreground: #ffffff;
+  --purple-subtle: #1e1635;
+
+  --ring: #7c5cff;
+
+  --glass-bg: rgba(22, 22, 24, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --glass-pill-bg: rgba(255, 255, 255, 0.14);
+  --glass-pill-border: rgba(255, 255, 255, 0.22);
+  --glass-pill-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  --glass-nav-bg: rgba(22, 22, 24, 0.88);
+  --glass-nav-border: rgba(255, 255, 255, 0.16);
+  --nav-link-idle: rgba(255, 255, 255, 0.72);
+  --nav-link-active: #ffffff;
+
+  --glass-dark-bg: rgba(12, 12, 14, 0.82);
+  --glass-dark-border: rgba(255, 255, 255, 0.12);
+  --glass-dark-highlight: rgba(255, 255, 255, 0.1);
+
+  --glass-blur: blur(12px) saturate(140%);
+  --glass-blur-strong: blur(20px) saturate(140%);
+  --glass-nav-blur: blur(12px) saturate(150%);
+
+  --nav-offset: 5.25rem;
+  --hero-top-gap: 1.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-purple: var(--purple);
+  --color-purple-hover: var(--purple-hover);
+  --color-purple-foreground: var(--purple-foreground);
+  --color-purple-subtle: var(--purple-subtle);
+  --color-ring: var(--ring);
+  --color-inverse: var(--inverse);
+  --color-inverse-fg: var(--inverse-fg);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-bento: 1.75rem;
+}

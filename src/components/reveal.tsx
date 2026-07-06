@@ -34,7 +34,7 @@ const directionClass: Record<RevealDirection, string> = {
 
 /**
  * Fades + lifts its children into view once on scroll using IntersectionObserver.
- * Respects prefers-reduced-motion (handled in globals.css).
+ * Respects prefers-reduced-motion (handled in styles/performance.css).
  */
 export function Reveal({
   children,

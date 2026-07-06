@@ -1,0 +1,107 @@
+@layer utilities {
+@media (max-width: 768px) {
+    .glass-nav,
+    .glass-section,
+    .glass-seam,
+    .glass-drawer {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+
+    .hero-3d-plane,
+    .hero-3d-cube {
+      display: none;
+    }
+
+    .animate-hero-glow,
+    .flowdesk-bar,
+    .flowdesk-orb,
+    .flowdesk-orb-alt,
+    .flowdesk-scan,
+    .flowdesk-step,
+    .flowdesk-pill,
+    .flowdesk-metric-pulse,
+    .flowdesk-card-shell,
+    .card-3d-float,
+    .animate-float-tilt {
+      animation: none;
+    }
+
+    .hover-3d-lift:hover {
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-stagger > * {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+    .hero-entrance {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+    .tm-item {
+      animation: none;
+    }
+    .animate-marquee,
+    .animate-marquee-left,
+    .animate-marquee-right,
+    .anim-bar,
+    .anim-soft-pulse,
+    .anim-float-subtle,
+    .anim-scroll-y,
+    .bar-travel,
+    .border-beam::before,
+    .animate-float,
+    .card-3d-float,
+    .hero-3d-cube,
+    .animate-float-tilt,
+    .animate-header-in,
+    .animate-hero-glow,
+    .page-transition-content,
+    .flowdesk-bar,
+    .flowdesk-orb,
+    .flowdesk-orb-alt,
+    .flowdesk-scan,
+    .flowdesk-step,
+    .flowdesk-pill,
+    .flowdesk-metric-pulse,
+    .flowdesk-card-shell {
+      animation: none;
+    }
+    .intro-curtain,
+    .intro-curtain-in,
+    .intro-curtain-zoom-out,
+    .intro-curtain-out,
+    .intro-loader-zoom,
+    .intro-loader-fill-run,
+    .intro-loader-shimmer,
+    .intro-loader-dots span,
+    .intro-loader-status,
+    .intro-cursor,
+    .intro-blink,
+    .intro-90s-blink,
+    .intro-90s-under-construction,
+    .intro-marquee-track,
+    .intro-browser-shake,
+    .intro-browser-visible,
+    .intro-browser-out,
+    .intro-reload-logo-spin,
+    .intro-reload-spin,
+    .intro-click-ripple,
+    .intro-stage-out {
+      animation: none;
+      transition: none;
+      opacity: 0;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

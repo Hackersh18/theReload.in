@@ -1,0 +1,48 @@
+@layer utilities {
+/* Footer watermark — large brand mark like 100xDevs */
+  .footer-watermark {
+    margin-top: -1.5rem;
+    padding: 0 1rem 0.5rem;
+    font-size: clamp(4.5rem, 20vw, 13rem);
+    font-weight: 800;
+    line-height: 0.82;
+    text-align: center;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.033) 55%,
+      rgba(255, 255, 255, 0.011) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Faint SoftSole watermark behind hero */
+  .bg-watermark {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'%3E%3Crect x='8' y='8' width='48' height='48' rx='10' fill='%23c6ff00' fill-opacity='0.12'/%3E%3Crect x='64' y='8' width='48' height='48' rx='10' fill='%236b4eff' fill-opacity='0.08'/%3E%3Crect x='8' y='64' width='48' height='48' rx='10' fill='%236b4eff' fill-opacity='0.08'/%3E%3Crect x='64' y='64' width='48' height='48' rx='10' fill='%23c6ff00' fill-opacity='0.12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: min(520px, 70vw);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+  }
+
+  /* Full-width dark section shell */
+  .section-dark {
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+
+  .section-dark .text-muted {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

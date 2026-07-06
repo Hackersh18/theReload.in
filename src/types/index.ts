@@ -1,6 +1,6 @@
 import type { IconName } from "@/components/icons";
 
-export type ServiceCategory = "Web Apps" | "Design" | "SaaS" | "Consulting";
+export type ServiceCategory = "Web Apps" | "Design" | "SaaS" | "Consulting" | "AI" | "EdTech";
 
 export interface Service {
   slug: string;
@@ -8,6 +8,8 @@ export interface Service {
   title: string;
   summary: string;
   description: string;
+  /** Specific capabilities and deliverables included in this service. */
+  offerings: string[];
   process: string[];
   tags: string[];
 }
@@ -34,6 +36,8 @@ export interface Project {
   /** Initials shown on the thumbnail. */
   initials: string;
   year: string;
+  /** Live product URL when available. */
+  url?: string;
   caseStudy: CaseStudy;
 }
 
@@ -51,6 +55,12 @@ export interface Testimonial {
 
 export interface ClientLogo {
   name: string;
+}
+
+export interface ProductType {
+  title: string;
+  description: string;
+  icon: IconName;
 }
 
 export type PostCategory =

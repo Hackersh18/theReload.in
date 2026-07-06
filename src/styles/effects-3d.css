@@ -1,0 +1,158 @@
+@layer utilities {
+/* 3D depth system */
+  .card-3d-scene {
+    --rx: 0deg;
+    --ry: 0deg;
+    --tz: 0px;
+    --gx: 50%;
+    --gy: 50%;
+    position: relative;
+    perspective: 1100px;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d-inner {
+    position: relative;
+    transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz));
+    transform-style: preserve-3d;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-3d-scene:hover .card-3d-inner {
+    will-change: transform;
+  }
+
+  .card-3d-glare {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at var(--gx) var(--gy),
+      rgba(255, 255, 255, 0.18) 0%,
+      transparent 58%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .card-3d-scene:hover .card-3d-glare {
+    opacity: 1;
+  }
+
+  .card-3d-float {
+    animation: card-3d-float-scene 8s ease-in-out infinite;
+  }
+
+  @keyframes card-3d-float-scene {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .depth-elevated {
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 16px 36px rgba(0, 0, 0, 0.08);
+  }
+
+  .depth-elevated-dark {
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .hover-3d-lift {
+    transform-style: preserve-3d;
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-3d-lift:hover {
+    transform: translateY(-6px) rotateX(4deg) rotateY(-3deg) scale(1.01);
+    box-shadow:
+      0 20px 40px -12px rgba(0, 0, 0, 0.18),
+      0 8px 16px -8px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark .hover-3d-lift:hover,
+  .section-dark .hover-3d-lift:hover {
+    box-shadow:
+      0 24px 48px -12px rgba(0, 0, 0, 0.55),
+      0 8px 20px -8px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .hero-3d-plane {
+    position: absolute;
+    inset: 10% 5% auto;
+    height: 55%;
+    border-radius: 2rem;
+    border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--surface) 80%, transparent),
+      transparent 70%
+    );
+    transform: perspective(900px) rotateX(58deg) scale(1.15);
+    transform-origin: center top;
+    opacity: 0.35;
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.12);
+  }
+
+  .hero-3d-cube {
+    position: absolute;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent) 18%, transparent),
+      color-mix(in srgb, var(--purple) 12%, transparent)
+    );
+    box-shadow:
+      0 12px 32px -8px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform-style: preserve-3d;
+    animation: hero-cube-drift 12s ease-in-out infinite;
+  }
+
+  @keyframes hero-cube-drift {
+    0%,
+    100% {
+      transform: rotateX(18deg) rotateY(-24deg) translateY(0);
+    }
+    50% {
+      transform: rotateX(22deg) rotateY(-18deg) translateY(-12px);
+    }
+  }
+
+  .logo-3d {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .group:hover .logo-3d {
+    transform: rotateY(-12deg) rotateX(8deg) scale(1.06);
+  }
+
+  .animate-float-tilt {
+    animation: float-tilt 7s ease-in-out infinite;
+  }
+
+  @keyframes float-tilt {
+    0%,
+    100% {
+      transform: translateY(0) rotateX(6deg) rotateY(-4deg);
+    }
+    50% {
+      transform: translateY(-10px) rotateX(-4deg) rotateY(5deg);
+    }
+  }
+}

@@ -13,7 +13,7 @@ const heroMetrics = metrics.slice(0, 3);
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-16 pt-nav sm:pb-24 lg:pb-28">
+    <section className="relative overflow-hidden pb-16 pt-page-hero sm:pb-24 lg:pb-28">
       {/* Background layers */}
       <div className="hero-mesh pointer-events-none absolute inset-0 -z-10" />
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.22] animate-hero-glow" />
@@ -113,8 +113,11 @@ export function Hero() {
               <div key={m.label} className="stat-card text-center lg:text-left">
                 <p className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
                   <CountUp value={m.value} duration={1200 + i * 200} />
-                  {m.label === "Products shipped" && (
+                  {(m.label === "Products shipped" || m.label === "Live production builds") && (
                     <span className="text-accent">+</span>
+                  )}
+                  {m.label === "Less screening time with AI" && (
+                    <span className="text-accent">%</span>
                   )}
                 </p>
                 <p className="mt-1 text-xs font-medium text-muted sm:text-sm">{m.label}</p>

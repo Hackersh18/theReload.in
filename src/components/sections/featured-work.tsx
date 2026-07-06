@@ -6,13 +6,6 @@ import { ButtonLink, Eyebrow } from "@/components/ui";
 import { Icon } from "@/components/icons";
 import { featuredProjects } from "@/data/projects";
 
-/** Equal cards — Flowdesk centred with animated highlight. */
-const preview = [
-  featuredProjects[1],
-  featuredProjects[0],
-  featuredProjects[2],
-];
-
 export function FeaturedWork() {
   return (
     <section className="relative overflow-hidden bg-background">
@@ -27,43 +20,33 @@ export function FeaturedWork() {
             <SectionHeader
               eyebrow={<Eyebrow>Recent work</Eyebrow>}
               title="Products we've shipped"
-              description="Real client builds — SaaS dashboards, commerce platforms, and internal tools with measurable outcomes."
+              description="College websites, institute CRMs, AI interviewers, and scheduling agents — real builds with measurable outcomes."
             />
           </Reveal>
 
           <Reveal delay={80}>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:pb-1">
-              <div className="stat-card flex items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3">
-                <div>
-                  <p className="text-2xl font-extrabold tracking-tight text-foreground">
-                    <CountUp value={`${featuredProjects.length}`} />+
-                  </p>
-                  <p className="text-xs font-medium text-muted">Featured builds</p>
-                </div>
-                <div className="h-10 w-px bg-border" />
-                <div>
-                  <p className="text-2xl font-extrabold tracking-tight text-foreground">
-                    8 wk
-                  </p>
-                  <p className="text-xs font-medium text-muted">Avg. MVP timeline</p>
-                </div>
+            <div className="stat-card flex items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3 lg:pb-1">
+              <div>
+                <p className="text-2xl font-extrabold tracking-tight text-foreground">
+                  <CountUp value={`${featuredProjects.length}`} />+
+                </p>
+                <p className="text-xs font-medium text-muted">Featured builds</p>
               </div>
-              <ButtonLink href="/work" variant="outline" size="md">
-                View all work
-                <Icon name="arrowRight" size={16} />
-              </ButtonLink>
+              <div className="h-10 w-px bg-border" />
+              <div>
+                <p className="text-2xl font-extrabold tracking-tight text-foreground">
+                  8 wk
+                </p>
+                <p className="text-xs font-medium text-muted">Avg. MVP timeline</p>
+              </div>
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {preview.map((project, i) => (
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {featuredProjects.map((project, i) => (
             <Reveal key={project.slug} delay={i * 100}>
-              <ProjectCard
-                project={project}
-                highlight={project.slug === "flowdesk"}
-                className="h-full"
-              />
+              <ProjectCard project={project} className="h-full" />
             </Reveal>
           ))}
         </div>
@@ -73,7 +56,7 @@ export function FeaturedWork() {
             className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-border bg-surface px-4 py-3"
             step={60}
           >
-            {["SaaS", "Web Apps", "E-commerce", "Internal tools", "API platforms"].map(
+            {["EdTech", "CRM", "AI agents", "College websites", "Admissions tools"].map(
               (cat) => (
                 <span
                   key={cat}
@@ -85,6 +68,23 @@ export function FeaturedWork() {
               ),
             )}
           </RevealStagger>
+        </Reveal>
+
+        <Reveal delay={380}>
+          <div className="mt-10 flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="max-w-md text-center text-sm text-muted sm:text-left">
+              Full case studies with stack, approach, and measurable outcomes.
+            </p>
+            <ButtonLink
+              href="/work"
+              variant="primary"
+              size="md"
+              className="shrink-0 font-bold"
+            >
+              View all work
+              <Icon name="arrowRight" size={16} />
+            </ButtonLink>
+          </div>
         </Reveal>
       </div>
     </section>

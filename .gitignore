@@ -36,6 +36,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# private review submissions (written by /api/reviews)
+data/review-submissions.json
+
+# private blog drafts (written by /api/blog-drafts)
+data/blog-drafts.json
+
+# CMS admin credentials (created via /share/cms/setup)
+data/cms-auth.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

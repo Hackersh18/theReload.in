@@ -81,13 +81,13 @@ export function Navbar() {
           <div className="flex items-center justify-end gap-1.5 sm:gap-2">
             <ThemeToggle className="hidden sm:inline-flex" />
             <Link
-              href="/contact#faq"
+              href="/contact"
               className={cn(
                 "hidden md:inline-block",
                 navItemClass(pathname.startsWith("/contact")),
               )}
             >
-              FAQ
+              Contact
             </Link>
             <span className="hidden md:inline-flex">
               <CalButton size="sm" withIcon label="Book a Call" />
@@ -155,13 +155,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact#faq"
-            onClick={() => setOpen(false)}
-            className={mobileItemClass(false)}
-          >
-            FAQ
-          </Link>
           <Link
             href="/contact"
             onClick={() => setOpen(false)}

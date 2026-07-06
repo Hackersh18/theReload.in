@@ -8,28 +8,28 @@ const statCards = [
     value: metrics[0].value,
     suffix: "+",
     label: metrics[0].label,
-    detail: "From MVPs to enterprise platforms",
+    detail: "Websites, CRMs, AI agents & SaaS platforms",
     animate: true,
   },
   {
     value: metrics[1].value,
     suffix: "",
     label: metrics[1].label,
-    detail: "Teams that come back for v2",
+    detail: "Avviare, CRM Portal & AI automation in use",
     animate: true,
   },
   {
     value: metrics[2].value,
     suffix: "",
     label: metrics[2].label,
-    detail: "Remote-first, globally distributed",
+    detail: "Full-stack, mobile, AI, chatbots & consultation",
     animate: true,
   },
   {
     value: "6–12",
     suffix: " wk",
     label: "Avg. delivery",
-    detail: "Scoped sprints, predictable shipping",
+    detail: "Scoped sprints from discovery to launch",
     animate: false,
   },
 ] as const;
@@ -47,7 +47,7 @@ export function Metrics() {
             Proven results
           </p>
           <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Built to perform in production.
+            Real systems shipped for education & product teams.
           </h2>
         </Reveal>
 

@@ -16,7 +16,7 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="bg-watermark pointer-events-none absolute inset-0 -z-10 opacity-60" />
-      <div className="mx-auto max-w-3xl px-5 pb-14 pt-nav text-center sm:px-6 sm:pb-20 sm:pt-[calc(var(--nav-offset)+2.5rem)]">
+      <div className="mx-auto max-w-3xl px-5 pb-14 pt-page-hero text-center sm:px-6 sm:pb-20">
         <Reveal immediate>
           <div className="flex justify-center">
             <Eyebrow>{eyebrow}</Eyebrow>

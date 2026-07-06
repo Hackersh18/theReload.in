@@ -47,7 +47,7 @@ export default async function CaseStudyPage({
 
   return (
     <>
-      <Section className="pb-0 pt-nav">
+      <Section className="pb-0 pt-page-hero">
         <Reveal>
           <Link
             href="/work"
@@ -66,6 +66,17 @@ export default async function CaseStudyPage({
             {project.name}
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted">{project.tagline}</p>
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-accent transition-colors hover:text-accent-hover"
+            >
+              Visit live site
+              <Icon name="arrowUpRight" size={15} />
+            </a>
+          )}
         </Reveal>
 
         {/* Banner */}

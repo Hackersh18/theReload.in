@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/icons";
+import "@/styles/flowdesk.css";
 import { cn } from "@/lib/utils";
 
 const activationBars = [32, 48, 41, 62, 55, 78, 68, 88, 82, 95];
